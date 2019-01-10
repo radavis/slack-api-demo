@@ -12,7 +12,7 @@ class Slack {
     this.token = token || process.env.SLACK_OAUTH_TOKEN
   }
 
-  usersPromise() {
+  fetchUsers() {
     return fetch(`${this.baseUrl}/users.list`, this._options())
       .then(response => response.json())
   }
